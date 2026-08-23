@@ -1,52 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="hero-shell">
+  <section id="home" class="hero-compact" aria-label="Logven">
     <img
-      class="hero-image"
-      src="{{ get_url(path='images/home/hero.avif') }}"
+      class="hero-compact__image"
+      src="{{ get_url(path='images/home/hero-frame4-3.png') }}"
       alt=""
-      width="1536"
-      height="1024"
+      width="4096"
+      height="1535"
       fetchpriority="high"
       decoding="async"
     >
-
-    <section id="home" class="hero" aria-labelledby="hero-title">
-      <div class="hero__copy">
-        <h1 id="hero-title" class="type-label type-label--inverse type-label--tight">Your best people are doing work that shouldn’t exist</h1>
-        <p class="type-body type-body--inverse type-body--hero">
-          Logven builds software for the <strong>grey area</strong> in your technical teams’
-          <strong>work</strong>: the operational tasks that sit between your tools, too specific
-          for enterprise software, too expensive to justify a custom build. <strong>On premise</strong>,
-          fully auditable, owned by the people doing the work.
-        </p>
-        <a class="hero-button" href="#contacts">Take a look</a>
-      </div>
-    </section>
-
-    <section class="partner-strip" aria-label="Industries served">
-      <p class="partner-label">For technical industries</p>
-      <div class="partner-marquee">
-        <div class="partner-track">
-          <div class="partner-set">
-            <span class="partner-industry">Energy</span>
-            <span class="partner-industry">Industrial automation</span>
-            <span class="partner-industry">Aerospace</span>
-            <span class="partner-industry">Engineering</span>
-            <span class="partner-industry">Manufacturing</span>
-          </div>
-          <div class="partner-set" aria-hidden="true">
-            <span class="partner-industry">Energy</span>
-            <span class="partner-industry">Industrial automation</span>
-            <span class="partner-industry">Aerospace</span>
-            <span class="partner-industry">Engineering</span>
-            <span class="partner-industry">Manufacturing</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
+    <img
+      class="hero-compact__logo"
+      src="{{ get_url(path='brand/logven-wordmark.svg') }}"
+      alt="Logven"
+      width="301"
+      height="95"
+    >
+  </section>
 
   <div id="stories" class="story">
     <section class="content-section content-section--first" aria-labelledby="idea-title">
@@ -104,7 +76,7 @@
 
         <p>
           I hate all the agentic slop wave we have now in 2026. This was, to me, one of the few uses
-          of the agentic concept that actually made sense: <strong>agents as something temporary</strong>.
+          of the agentic concept that actually made sense: <em>agents as something temporary</em>.
           You use them to get the work running and understand the operation, then you replace the
           stable parts with normal software.
         </p>
@@ -125,12 +97,6 @@
           reports, reading responses, and dealing with anomalies.
         </p>
 
-        <p>Maybe five plant-specific agents are actually doing the exact same thing.</p>
-        <p>Maybe one plant has a weird exception.</p>
-        <p>Maybe operators always correct the same field after PDF extraction.</p>
-        <p>Maybe the same three anomaly types keep appearing.</p>
-        <p>Maybe a step everyone thought needed an LLM is actually completely deterministic.</p>
-
         <p>
           As the system sees more executions, Logven can start merging equivalent agents, defining
           common data formats, adding approval steps where they’re actually needed, and replacing
@@ -141,7 +107,7 @@
 
         <p>
           Eventually, what you have isn’t really an agent system anymore. It’s a plant-operations
-          system that <strong>converged from the work itself instead of being fully designed upfront</strong>.
+          system that <em>converged from the work itself instead of being fully designed upfront</em>.
         </p>
 
         <p>And that’s vanilla software, not AI slop, so quite cheap too.</p>
