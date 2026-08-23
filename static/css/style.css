@@ -293,11 +293,33 @@ body.is-at-top .site-header__logo img {
   background: var(--mist);
 }
 
-/* Intentional whitespace reserved for the next homepage section. */
+/* Work in progress */
 
-.page-breathing-room {
+.work-in-progress {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) minmax(0, 3fr);
+  gap: 2.5rem;
   min-height: clamp(24rem, 55vw, 52rem);
+  padding: clamp(4rem, 8vw, 8rem) var(--header-gutter);
   background: var(--paper);
+}
+
+.work-in-progress__title,
+.work-in-progress__text {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.work-in-progress__title {
+  color: #777777;
+  font-weight: 400;
+}
+
+.work-in-progress__text {
+  max-width: 48rem;
+  color: #0a0a0a;
+  font-weight: 400;
 }
 
 /* Footer */
@@ -405,6 +427,12 @@ body.is-at-top .site-header__logo img {
 }
 
 @media (max-width: 768px) {
+  .work-in-progress {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    min-height: auto;
+  }
+
   .site-footer__inner {
     grid-template-columns: 1fr;
     gap: 1.75rem;
