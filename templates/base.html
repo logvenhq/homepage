@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fafafa">
+    <meta name="description" content="{{ config.description }}">
+    <meta name="robots" content="index,follow">
+    <meta property="og:site_name" content="{{ config.title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ config.title }}">
+    <meta property="og:description" content="{{ config.description }}">
+    <meta property="og:image" content="{{ get_url(path='images/home/hero.avif') }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="{{ get_url(path='css/style.css', cachebust=true) }}">
+    <title>{{ config.title }}</title>
+  </head>
+  <body class="is-home is-at-top">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <nav aria-label="Primary navigation">
+        <a href="#home" aria-current="page">Home</a>
+        <a href="#contacts">Contacts</a>
+      </nav>
+      <a class="site-header__logo" href="#home" aria-label="Logven home">
+        <img src="{{ get_url(path='brand/logo.svg') }}" alt="" width="86" height="93">
+      </a>
+    </header>
+
+    <main id="main-content">
+      {% block content %}{% endblock content %}
+    </main>
+
+    <footer id="contacts" class="site-footer" aria-labelledby="footer-title">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="#home" aria-label="Logven home">
+            <img src="{{ get_url(path='brand/logo.svg') }}" alt="" width="86" height="93">
+          </a>
+          <p class="site-footer__note"><strong id="footer-title">Operational software</strong> for technical teams.</p>
+        </div>
+
+        <nav class="site-footer__groups" aria-label="Footer navigation">
+          <div class="site-footer__group">
+            <p class="site-footer__title">Explore</p>
+            <ul class="site-footer__list">
+              <li><a href="#home">Home</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__group">
+            <p class="site-footer__title">Connect</p>
+            <ul class="site-footer__list">
+              <li><a href="mailto:contact@logven.com">Contact us</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </footer>
+    <script>
+      (() => {
+        const body = document.body;
+        const syncHeaderState = () => {
+          body.classList.toggle("is-at-top", window.scrollY <= 8);
+        };
+
+        syncHeaderState();
+        window.addEventListener("scroll", syncHeaderState, { passive: true });
+      })();
+    </script>
+  </body>
+</html>

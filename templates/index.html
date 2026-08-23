@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section id="home" class="hero" aria-labelledby="hero-title">
+    <img
+      class="hero-image"
+      src="{{ get_url(path='images/home/hero.avif') }}"
+      alt=""
+      width="1536"
+      height="1024"
+      fetchpriority="high"
+      decoding="async"
+    >
+
+    <div class="hero__copy">
+      <h1 id="hero-title" class="type-label type-label--inverse type-label--tight">Your best people are doing work that shouldn’t exist</h1>
+      <p class="type-body type-body--inverse type-body--hero">
+        Logven builds software for the <strong>grey area</strong> in your technical teams’
+        <strong>work</strong>: the operational tasks that sit between your tools, too specific
+        for enterprise software, too expensive to justify a custom build. <strong>On premise</strong>,
+        fully auditable, owned by the people doing the work.
+      </p>
+      <a class="hero-button" href="#contacts">
+        Take a look
+      </a>
+    </div>
+  </section>
+
+  <section class="partner-strip" aria-label="Industries served">
+    <p class="partner-label">For technical industries</p>
+    <div class="partner-marquee">
+      <div class="partner-track">
+        <div class="partner-set">
+          <span class="partner-industry">Energy</span>
+          <span class="partner-industry">Industrial automation</span>
+          <span class="partner-industry">Aerospace</span>
+          <span class="partner-industry">Engineering</span>
+          <span class="partner-industry">Manufacturing</span>
+        </div>
+        <div class="partner-set" aria-hidden="true">
+          <span class="partner-industry">Energy</span>
+          <span class="partner-industry">Industrial automation</span>
+          <span class="partner-industry">Aerospace</span>
+          <span class="partner-industry">Engineering</span>
+          <span class="partner-industry">Manufacturing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-breathing-room" aria-hidden="true"></div>
+{% endblock content %}
