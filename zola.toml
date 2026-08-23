@@ -1,6 +1,6 @@
 base_url = "https://logven.com"
 title = "Logven"
-description = "Operational software for technical teams, built on premise and shaped around the work your people actually do."
+description = "Operational software for technical teams, deployable on-premises and shaped by observed workflows."
 default_language = "en"
 
 # Assets are maintained as plain CSS and static files.
@@ -12,4 +12,3 @@ minify_html = true
 
 [markdown]
 smart_punctuation = true
-
