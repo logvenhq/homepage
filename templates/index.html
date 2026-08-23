@@ -2,15 +2,27 @@
 
 {% block content %}
   <section id="home" class="hero-compact" aria-label="Logven">
-    <img
-      class="hero-compact__image"
-      src="{{ get_url(path='images/home/hero-frame4-3.png') }}"
-      alt=""
-      width="4096"
-      height="1535"
-      fetchpriority="high"
-      decoding="async"
-    >
+    <picture class="hero-compact__media">
+      <source
+        type="image/avif"
+        srcset="
+          {{ get_url(path='images/home/hero-768.avif') }} 768w,
+          {{ get_url(path='images/home/hero-1280.avif') }} 1280w,
+          {{ get_url(path='images/home/hero-1920.avif') }} 1920w,
+          {{ get_url(path='images/home/hero-2560.avif') }} 2560w
+        "
+        sizes="100vw"
+      >
+      <img
+        class="hero-compact__image"
+        src="{{ get_url(path='images/home/hero-frame4-3.png') }}"
+        alt=""
+        width="4096"
+        height="1535"
+        fetchpriority="high"
+        decoding="async"
+      >
+    </picture>
     <img
       class="hero-compact__logo"
       src="{{ get_url(path='brand/logven-wordmark.svg') }}"

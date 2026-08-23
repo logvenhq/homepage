@@ -7,9 +7,11 @@
 }
 
 :root {
-  --ink: #141a20;
+  --ink: #141a21;
+  --text: #30363e;
+  --muted: #747e89;
   --paper: #f8fafc;
-  --mist: #e7edf2;
+  --mist: #e8eef5;
   --paper-on-dark: #ffffff;
   --gutter: clamp(1.5rem, 4.5vw, 5rem);
   --header-gutter: clamp(1.5rem, 5vw, 3rem);
@@ -93,10 +95,14 @@ a {
   pointer-events: none;
   background: linear-gradient(
     to bottom,
-    transparent 45%,
-    rgb(248 250 252 / 18%) 58%,
-    var(--paper) 88%
+    transparent 35%,
+    rgb(248 250 252 / 18%) 48%,
+    var(--paper) 78%
   );
+}
+
+.hero-compact__media {
+  display: contents;
 }
 
 .hero-compact__image {
@@ -134,7 +140,7 @@ a {
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.35;
-  color: #747e87;
+  color: var(--muted);
   font-weight: 400;
 }
 
@@ -146,7 +152,7 @@ a {
 
 .content-section__copy p {
   margin: 0;
-  color: #30363c;
+  color: var(--text);
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.5;
@@ -159,7 +165,7 @@ a {
 /* Footer */
 
 .site-footer {
-  color: #30363c;
+  color: var(--text);
   background: var(--paper);
   padding: clamp(2.5rem, 5vw, 4.5rem) 0;
 }
@@ -182,7 +188,7 @@ a {
 }
 
 .site-footer__nav a:hover {
-  color: #747e87;
+  color: var(--muted);
 }
 
 .site-footer__rule {
