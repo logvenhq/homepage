@@ -48,13 +48,134 @@
     </section>
   </div>
 
-  <section class="work-in-progress" aria-labelledby="work-in-progress-title">
-    <h2 id="work-in-progress-title" class="work-in-progress__title">Work in progress</h2>
-    <p class="work-in-progress__text">
-      Logven is a work in progress: a growing collection of software, ideas, and observations
-      about the operational work that keeps technical teams moving. We are building in public,
-      one useful piece at a time, around the messy space between the systems people use and the
-      work they actually need to get done.
-    </p>
+  <div class="story">
+    <section class="content-section content-section--first" aria-labelledby="idea-title">
+      <h2 id="idea-title" class="content-section__title">The idea</h2>
+      <div class="content-section__copy">
+        <p>
+          Logven is a tool for defining, running, observing, and formalizing enterprise and business
+          operations, built to tackle the grey-area work of enterprise technical teams.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="problem-title">
+      <h2 id="problem-title" class="content-section__title">The problem</h2>
+      <div class="content-section__copy">
+        <p>
+          Companies are often asked to map out an entire process before doing anything. In practice,
+          the dependencies, weird exceptions, approvals, and edge cases are exactly what nobody has
+          been able to define upfront.
+        </p>
+
+        <p>
+          Everyone has this funny little problem of having to develop useful frameworks for 20k+
+          employees. In enterprise, this is quite necessary. Having everything on-prem is also a
+          recurring concern.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="solution-title">
+      <h2 id="solution-title" class="content-section__title">The solution</h2>
+      <div class="content-section__copy">
+        <p>
+          The idea is pretty simple: instead of asking a company to map out an entire process before
+          doing anything, you let LLM-powered agents do the work first. Then you look at how the work
+          actually happened.
+        </p>
+
+        <p>
+          An initial agent is basically a hypothesis about how a piece of work should be done. It’s
+          useful because you can run it, see where it breaks, and learn from that. You begin with a
+          rough version of the process, run it on real work, and gradually figure out what was missing.
+        </p>
+
+        <p>
+          Over time, those executions give you enough information to turn messy workflows into
+          standard processes, and eventually into actual custom software built around that operation.
+        </p>
+
+        <p>
+          In the end, user-modelled agents are just the starting shape. What you actually want is for
+          them to slowly turn into custom software for the company: private, mostly deterministic,
+          and using small LLMs only where they are genuinely useful, ideally under 40B parameters.
+        </p>
+
+        <p>
+          I hate all the agentic slop wave we have now in 2026. This was, to me, one of the few uses
+          of the agentic concept that actually made sense: <strong>agents as something temporary</strong>.
+          You use them to get the work running and understand the operation, then you replace the
+          stable parts with normal software.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="example-title">
+      <h2 id="example-title" class="content-section__title">An example</h2>
+      <div class="content-section__copy">
+        <p>
+          A real example is something I had the chance to discuss with a geothermal team in the
+          public sector, at ARPAT.
+        </p>
+
+        <p>
+          They manage data from 36 geothermal plants. The work is basically a mix of extracting values
+          from PDFs, updating spreadsheets and databases, combining and analyzing data, writing
+          reports, reading responses, and dealing with anomalies.
+        </p>
+
+        <p>Maybe five plant-specific agents are actually doing the exact same thing.</p>
+        <p>Maybe one plant has a weird exception.</p>
+        <p>Maybe operators always correct the same field after PDF extraction.</p>
+        <p>Maybe the same three anomaly types keep appearing.</p>
+        <p>Maybe a step everyone thought needed an LLM is actually completely deterministic.</p>
+
+        <p>
+          As the system sees more executions, Logven can start merging equivalent agents, defining
+          common data formats, adding approval steps where they’re actually needed, and replacing
+          unstable agent handoffs with normal code and integrations.
+        </p>
+
+        <p>The model stays only in the parts where ambiguity is still present.</p>
+
+        <p>
+          Eventually, what you have isn’t really an agent system anymore. It’s a plant-operations
+          system that <strong>converged from the work itself instead of being fully designed upfront</strong>.
+        </p>
+
+        <p>And that’s vanilla software, not AI slop, so quite cheap too.</p>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="team-title">
+      <h2 id="team-title" class="content-section__title">Team</h2>
+      <div class="content-section__copy">
+        <p>
+          Logven is being built closely with the technical teams who will use it. The product is
+          shaped through direct conversations, real workflows, and early implementations in hard-tech
+          environments.
+        </p>
+
+        <p>
+          The team is small for now, and the work is deliberately close to the operations it is meant
+          to improve.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <section class="content-section content-section--separated" aria-labelledby="collaborations-title">
+    <h2 id="collaborations-title" class="content-section__title">Collaborations</h2>
+    <div class="content-section__copy">
+      <p>
+        We are currently in a POC with a still-undisclosed energy company, working on a new wind site.
+      </p>
+
+      <p>
+        These collaborations are where the product becomes concrete: real operations, real constraints,
+        and a direct view of what should become software next.
+      </p>
+    </div>
   </section>
 {% endblock content %}

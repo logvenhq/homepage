@@ -32,30 +32,14 @@
       {% block content %}{% endblock content %}
     </main>
 
-    <footer id="contacts" class="site-footer" aria-labelledby="footer-title">
-      <div class="site-footer__inner">
-        <div class="site-footer__brand">
-          <a class="site-footer__logo" href="#home" aria-label="Logven home">
-            <img src="{{ get_url(path='brand/logo.svg') }}" alt="" width="86" height="93">
-          </a>
-          <p class="site-footer__note"><strong id="footer-title">Operational software</strong> for technical teams.</p>
-        </div>
-
-        <nav class="site-footer__groups" aria-label="Footer navigation">
-          <div class="site-footer__group">
-            <p class="site-footer__title">Explore</p>
-            <ul class="site-footer__list">
-              <li><a href="#home">Home</a></li>
-            </ul>
-          </div>
-          <div class="site-footer__group">
-            <p class="site-footer__title">Connect</p>
-            <ul class="site-footer__list">
-              <li><a href="mailto:contact@logven.com">Contact us</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+    <footer id="contacts" class="site-footer">
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <a href="mailto:contact@logven.com?subject=Press%20kit">Press kit</a>
+        <span class="site-footer__rule" aria-hidden="true"></span>
+        <a href="mailto:contact@logven.com">@logven</a>
+        <span class="site-footer__rule" aria-hidden="true"></span>
+        <a href="mailto:contact@logven.com?subject=Hiring">We’re hiring</a>
+      </nav>
     </footer>
     <script>
       (() => {
