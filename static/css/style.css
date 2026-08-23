@@ -340,9 +340,9 @@ body.is-at-top .site-header__logo img {
 
 .site-footer__nav {
   display: grid;
-  grid-template-columns: auto minmax(3rem, 1fr) auto minmax(3rem, 1fr) auto;
+  grid-template-columns: minmax(3rem, 1fr) auto minmax(2rem, 4rem) auto;
   align-items: start;
-  gap: clamp(1.5rem, 3vw, 3rem);
+  gap: clamp(0.5rem, 1vw, 1rem);
   padding: 0 var(--header-gutter);
 }
 
@@ -362,8 +362,15 @@ body.is-at-top .site-header__logo img {
 .site-footer__rule {
   align-self: center;
   height: 1px;
-  min-width: 3rem;
   background: var(--mist);
+}
+
+.site-footer__rule--small {
+  min-width: 2rem;
+}
+
+.site-footer__rule--large {
+  min-width: 3rem;
 }
 
 @media (max-width: 700px) {
