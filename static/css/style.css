@@ -131,8 +131,7 @@ a {
   width: clamp(2.25rem, 3.5vw, 3.25rem);
   height: auto;
   transform: translate(-50%, -50%);
-  animation: hero-logo-entrance 1.15s cubic-bezier(0.16, 1, 0.3, 1) 180ms both;
-  will-change: transform, opacity;
+  animation: hero-logo-entrance 1.8s cubic-bezier(0.22, 1, 0.36, 1) 220ms both;
   filter:
     drop-shadow(0 0.2rem 0.45rem rgb(71 91 115 / 18%))
     drop-shadow(0 0.65rem 1.15rem rgb(91 118 149 / 12%));
@@ -141,12 +140,20 @@ a {
 @keyframes hero-logo-entrance {
   from {
     opacity: 0;
-    transform: translate(-50%, calc(-50% + 1.75rem)) scale(0.97);
+    transform: translate(-50%, calc(-50% + 2rem)) scale(0.975);
+    filter:
+      blur(0.6rem)
+      drop-shadow(0 0.2rem 0.45rem rgb(71 91 115 / 18%))
+      drop-shadow(0 0.65rem 1.15rem rgb(91 118 149 / 12%));
   }
 
   to {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+    filter:
+      blur(0)
+      drop-shadow(0 0.2rem 0.45rem rgb(71 91 115 / 18%))
+      drop-shadow(0 0.65rem 1.15rem rgb(91 118 149 / 12%));
   }
 }
 
@@ -232,6 +239,15 @@ a {
 }
 
 @media (max-width: 700px) {
+  .hero-compact {
+    --hero-visual-height: clamp(27rem, 115vw, 34rem);
+    height: clamp(20rem, 82vw, 25rem);
+  }
+
+  .hero-compact__logo {
+    width: clamp(3.25rem, 12vw, 4rem);
+  }
+
   .content-section {
     grid-template-columns: 1fr;
     gap: 1rem;
