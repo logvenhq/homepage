@@ -131,21 +131,26 @@ a {
   width: clamp(2.25rem, 3.5vw, 3.25rem);
   height: auto;
   transform: translate(-50%, -50%);
-  animation: hero-logo-entrance 1.8s cubic-bezier(0.22, 1, 0.36, 1) 220ms both;
+  animation: hero-logo-entrance 2.1s cubic-bezier(0.16, 1, 0.3, 1) 220ms both;
   filter:
     drop-shadow(0 0.2rem 0.45rem rgb(71 91 115 / 18%))
     drop-shadow(0 0.65rem 1.15rem rgb(91 118 149 / 12%));
 }
 
 @keyframes hero-logo-entrance {
-  from {
+  0% {
     opacity: 0;
-    transform: translate(-50%, calc(-50% + 2rem));
+    transform: translate(-50%, calc(-50% + clamp(8rem, 18vh, 11rem))) scale(0.78)
+      rotate(-3deg);
   }
 
-  to {
+  24% {
+    opacity: 0.65;
+  }
+
+  100% {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
   }
 }
 
