@@ -23,12 +23,17 @@
         decoding="async"
       >
     </picture>
+    <canvas
+      class="hero-compact__matrix"
+      data-hero-matrix
+      aria-hidden="true"
+    ></canvas>
     <img
       class="hero-compact__logo"
-      src="{{ get_url(path='brand/logven-wordmark.svg') }}"
+      src="{{ get_url(path='brand/hero-logo.svg') }}"
       alt="Logven"
-      width="301"
-      height="95"
+      width="114"
+      height="125"
     >
   </section>
 
@@ -163,4 +168,6 @@
       </p>
     </div>
   </section>
+
+  <script src="{{ get_url(path='js/hero-matrix.js', cachebust=true) }}" defer></script>
 {% endblock content %}

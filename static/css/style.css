@@ -88,7 +88,7 @@ a {
 
 .hero-compact::after {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   inset: 0 0 auto;
   height: var(--hero-visual-height);
   content: "";
@@ -114,14 +114,40 @@ a {
   object-position: center bottom;
 }
 
+.hero-compact__matrix {
+  position: absolute;
+  z-index: 1;
+  inset: 0 0 auto;
+  width: 100%;
+  height: var(--hero-visual-height);
+  pointer-events: none;
+}
+
 .hero-compact__logo {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: 50%;
   left: 50%;
-  width: clamp(5rem, 8vw, 7.5rem);
+  width: clamp(2.25rem, 3.5vw, 3.25rem);
   height: auto;
   transform: translate(-50%, -50%);
+  animation: hero-logo-entrance 1.15s cubic-bezier(0.16, 1, 0.3, 1) 180ms both;
+  will-change: transform, opacity;
+  filter:
+    drop-shadow(0 0.2rem 0.45rem rgb(71 91 115 / 18%))
+    drop-shadow(0 0.65rem 1.15rem rgb(91 118 149 / 12%));
+}
+
+@keyframes hero-logo-entrance {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 1.75rem)) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 .story {
@@ -238,6 +264,14 @@ a {
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+  }
+
+  .hero-compact__matrix {
+    opacity: 0.45;
+  }
+
+  .hero-compact__logo {
+    animation: none;
   }
 
 }
