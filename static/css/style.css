@@ -230,8 +230,13 @@ a {
 }
 
 .content-section__copy strong {
-  color: var(--text);
+  color: #8a949f;
   font-weight: inherit;
+  transition: color 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.content-section__copy strong.is-emphasized {
+  color: var(--text);
 }
 
 .story-media {
