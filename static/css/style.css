@@ -86,6 +86,27 @@ a {
   background: var(--paper);
 }
 
+.hero-compact::before {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: clamp(16rem, 30vw, 25rem);
+  aspect-ratio: 1;
+  content: "";
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgb(255 255 255 / 58%) 0,
+    rgb(255 255 255 / 28%) 38%,
+    transparent 74%
+  );
+  transform: translate(-50%, -50%);
+  animation: hero-flight-glow 2.1s cubic-bezier(0.16, 1, 0.3, 1) 220ms both;
+  filter: blur(0.35rem);
+}
+
 .hero-compact::after {
   position: absolute;
   z-index: 2;
@@ -151,6 +172,26 @@ a {
   100% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes hero-flight-glow {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + clamp(8rem, 18vh, 11rem))) scale(0.5);
+  }
+
+  20% {
+    opacity: 0.72;
+  }
+
+  72% {
+    opacity: 0.35;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.05);
   }
 }
 
@@ -319,6 +360,11 @@ a {
   }
 
   .hero-compact__logo {
+    animation: none;
+  }
+
+  .hero-compact::before {
+    display: none;
     animation: none;
   }
 
