@@ -240,12 +240,12 @@ a {
 
 @media (max-width: 700px) {
   .hero-compact {
-    --hero-visual-height: clamp(27rem, 115vw, 34rem);
-    height: clamp(20rem, 82vw, 25rem);
+    --hero-visual-height: clamp(23rem, 96vw, 28rem);
+    height: clamp(16rem, 66vw, 19rem);
   }
 
   .hero-compact__logo {
-    width: clamp(3.25rem, 12vw, 4rem);
+    width: clamp(2.65rem, 9vw, 3.2rem);
   }
 
   .content-section {
