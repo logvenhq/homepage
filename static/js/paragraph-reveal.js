@@ -6,7 +6,7 @@
 
   if (!textElements.length || reduceMotion.matches) return;
 
-  let nextRevealAt = performance.now() + 2200;
+  let nextRevealAt = performance.now() + 2000;
 
   textElements.forEach((element, index) => {
     element.dataset.revealText = "";
