@@ -191,6 +191,30 @@ a {
   line-height: 1.5;
 }
 
+[data-reveal-text] {
+  opacity: 0;
+  transform: translateY(0.75rem);
+  filter: blur(0.45rem);
+}
+
+[data-reveal-text].is-visible {
+  animation: hero-text-entrance 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-text-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+    filter: blur(0.45rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
 .content-section--separated {
   margin-top: clamp(1.5rem, 2.5vw, 2.5rem);
 }
@@ -288,6 +312,16 @@ a {
 
   .hero-compact__logo {
     animation: none;
+  }
+
+  [data-reveal-text].is-visible {
+    animation: none;
+  }
+
+  [data-reveal-text] {
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 
 }
