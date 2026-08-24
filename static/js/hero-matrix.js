@@ -6,6 +6,7 @@
   const context = canvas.getContext("2d");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const colors = ["104, 135, 173", "119, 151, 188", "144, 169, 199"];
+  const initialDensity = 0.16;
 
   let cells = [];
   let cellSize = 32;
@@ -27,7 +28,9 @@
     return items;
   };
 
-  const createCells = () => {
+  const createCells = (seedInitialGrid = false) => {
+    const now = performance.now();
+
     cells = shuffle(
       Array.from({ length: columns * rows }, (_, index) => ({
         column: index % columns,
@@ -37,8 +40,15 @@
         color: colors[Math.floor(Math.random() * colors.length)],
       })),
     );
-    nextCell = 0;
-    nextRevealAt = performance.now() + 350;
+
+    const initialCellCount = seedInitialGrid ? Math.floor(cells.length * initialDensity) : 0;
+
+    cells.slice(0, initialCellCount).forEach((cell) => {
+      cell.revealedAt = now - 650;
+    });
+
+    nextCell = initialCellCount;
+    nextRevealAt = now + 350;
     cycleEndsAt = Infinity;
     cycleOpacity = 1;
   };
@@ -53,7 +63,7 @@
     canvas.width = Math.round(bounds.width * pixelRatio);
     canvas.height = Math.round(bounds.height * pixelRatio);
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-    createCells();
+    createCells(true);
 
     if (reduceMotion.matches) {
       cells.forEach((cell, index) => {
