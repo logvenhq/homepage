@@ -223,10 +223,15 @@ a {
 
 .content-section__copy p {
   margin: 0;
-  color: var(--text);
+  color: #8a949f;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.5;
+}
+
+.content-section__copy strong {
+  color: var(--text);
+  font-weight: inherit;
 }
 
 .story-media {
